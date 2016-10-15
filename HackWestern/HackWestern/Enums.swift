@@ -14,3 +14,7 @@ enum PillStatus {
     case APPROACHING
     case PENDING
 }
+
+enum ERRORTYPE {
+    case MISSING_INFORMATION
+}

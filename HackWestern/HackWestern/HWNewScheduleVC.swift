@@ -138,8 +138,12 @@ class HWNewScheduleVC: UIViewController, UITextViewDelegate {
     // MARK: - Process Text
     //-----------------
     private func processQuery(text : String){
-        WebServices.shared.getResponseFromServer(query: text) { (response) in
-            print(response.description)
+        WebServices.shared.getResponseFromServer(query: text) { (response, error) in
+            if error != nil {
+                DispatchQueue.main.async {
+                    self.transcriptionTextView.text = error
+                }
+            }
         }
     }
     //-----------------

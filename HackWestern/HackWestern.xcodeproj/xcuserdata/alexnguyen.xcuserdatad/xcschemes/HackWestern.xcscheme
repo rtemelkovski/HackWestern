@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "46C9B39B1DB1CA9D00717C41"
-               BuildableName = "HackWestern.app"
+               BuildableName = "Pill-Hero.app"
                BlueprintName = "HackWestern"
                ReferencedContainer = "container:HackWestern.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "46C9B39B1DB1CA9D00717C41"
-            BuildableName = "HackWestern.app"
+            BuildableName = "Pill-Hero.app"
             BlueprintName = "HackWestern"
             ReferencedContainer = "container:HackWestern.xcodeproj">
          </BuildableReference>
@@ -56,7 +56,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "46C9B39B1DB1CA9D00717C41"
-            BuildableName = "HackWestern.app"
+            BuildableName = "Pill-Hero.app"
             BlueprintName = "HackWestern"
             ReferencedContainer = "container:HackWestern.xcodeproj">
          </BuildableReference>
@@ -75,7 +75,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "46C9B39B1DB1CA9D00717C41"
-            BuildableName = "HackWestern.app"
+            BuildableName = "Pill-Hero.app"
             BlueprintName = "HackWestern"
             ReferencedContainer = "container:HackWestern.xcodeproj">
          </BuildableReference>

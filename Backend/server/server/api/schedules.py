@@ -18,12 +18,13 @@ class SchedulesAPI(Resource):
     @staticmethod
     def get():
         returnResult = []
+        currTime = datetime.datetime.now()
         if request.args['action'] == 'taken':
-            returnResult = Occurance.query.filter(and_(Occurance.pill_taken == True, Occurance.pill_missed == False)).order_by(Occurance.occurance_time)
+            returnResult = Occurance.query.filter(and_(Occurance.pill_taken == True, Occurance.pill_missed == False,Occurance.occurance_time > currTime)).order_by(Occurance.occurance_time)
         elif request.args['action'] == 'missed':
-            returnResult = Occurance.query.filter(and_(Occurance.pill_taken == False, Occurance.pill_missed == True)).order_by(Occurance.occurance_time)
+            returnResult = Occurance.query.filter(and_(Occurance.pill_taken == False, Occurance.pill_missed == True,Occurance.occurance_time > currTime)).order_by(Occurance.occurance_time)
         elif request.args['action'] == 'default':
-            returnResult = Occurance.query.filter(and_(Occurance.pill_taken == False, Occurance.pill_missed == False)).order_by(Occurance.occurance_time)
+            returnResult = Occurance.query.filter(and_(Occurance.pill_taken == False, Occurance.pill_missed == False,Occurance.occurance_time > currTime)).order_by(Occurance.occurance_time)
         elif request.args['action'] == 'all':
             returnResult = Occurance.query.order_by(desc(Occurance.occurance))
         resp = []
@@ -100,3 +101,20 @@ class ScheduleAPI(Resource):
         db.session.commit()
 
         return None, 204
+
+@schedules_api.resource('/schedules/notification/<int:occurance_id>')
+class ScheduleNotificationAPI(Resource):
+    @staticmethod
+    def put(occurance_id):
+        from app import db
+        occurance = Occurance.query.get_or_404(occurance_id)
+        if request.args['action'] == 'pre':
+            occurance.pre_notification_sent = True
+        elif request.args['action'] == 'post':
+            occurance.post_notification_sent = True
+        db.session.add(occurance)
+        db.session.commit()
+
+        return None, 204
+
+

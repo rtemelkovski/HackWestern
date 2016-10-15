@@ -152,4 +152,8 @@ class HWNewScheduleVC: UIViewController, UITextViewDelegate {
             try! startRecording()
         }
     }
+    @IBAction func createBtnPressed(_ sender: AnyObject) {
+        processQuery(text: transcriptionTextView.text)
+    }
+    
 }

@@ -14,6 +14,7 @@
 		46C9B3B71DB1DC1500717C41 /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C9B3B61DB1DC1500717C41 /* MaterialView.swift */; };
 		46C9B3B91DB1DD9400717C41 /* HWNewScheduleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C9B3B81DB1DD9400717C41 /* HWNewScheduleVC.swift */; };
 		46C9B3BB1DB1E6FB00717C41 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C9B3BA1DB1E6FB00717C41 /* Extensions.swift */; };
+		46C9B3BD1DB1E9DD00717C41 /* WebServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C9B3BC1DB1E9DD00717C41 /* WebServices.swift */; };
 		5DACF093D025E2A84DBEC14E /* Pods_HackWestern.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0FF101945DE292E5ED0AB76 /* Pods_HackWestern.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +29,7 @@
 		46C9B3B61DB1DC1500717C41 /* MaterialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialView.swift; sourceTree = "<group>"; };
 		46C9B3B81DB1DD9400717C41 /* HWNewScheduleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWNewScheduleVC.swift; sourceTree = "<group>"; };
 		46C9B3BA1DB1E6FB00717C41 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		46C9B3BC1DB1E9DD00717C41 /* WebServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServices.swift; sourceTree = "<group>"; };
 		673BA7A4356D54A5452055A8 /* Pods-HackWestern.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackWestern.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HackWestern/Pods-HackWestern.debug.xcconfig"; sourceTree = "<group>"; };
 		C0FF101945DE292E5ED0AB76 /* Pods_HackWestern.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HackWestern.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -110,6 +112,7 @@
 		46C9B3B41DB1CC6200717C41 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				46C9B3BC1DB1E9DD00717C41 /* WebServices.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				46C9B3B71DB1DC1500717C41 /* MaterialView.swift in Sources */,
+				46C9B3BD1DB1E9DD00717C41 /* WebServices.swift in Sources */,
 				46C9B3A01DB1CA9D00717C41 /* AppDelegate.swift in Sources */,
 				46C9B3B91DB1DD9400717C41 /* HWNewScheduleVC.swift in Sources */,
 				46C9B3BB1DB1E6FB00717C41 /* Extensions.swift in Sources */,

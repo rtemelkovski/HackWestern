@@ -74,13 +74,13 @@ class ScheduleAPI(Resource):
         for pill_item in schedules:
             occurance_items = []
             if request.args['action'] == 'taken':
-                occurance_items = Occurance.query.filter(and_(Occurance.schedule_id == pill_item['id'],Occurance.pill_taken == True, Occurance.pill_missed == False)).all()
+                occurance_items = Occurance.query.filter(and_(Occurance.schedule_id == pill_item['id'],Occurance.pill_taken == True, Occurance.pill_missed == False)).all().order_by(Occurance.occurance_time)
             elif request.args['action'] == 'missed':
-                occurance_items = Occurance.query.filter(and_(Occurance.schedule_id == pill_item['id'],Occurance.pill_taken == False, Occurance.pill_missed == True)).all()
+                occurance_items = Occurance.query.filter(and_(Occurance.schedule_id == pill_item['id'],Occurance.pill_taken == False, Occurance.pill_missed == True)).all().order_by(Occurance.occurance_time)
             elif request.args['action'] == 'default':
-                occurance_items = Occurance.query.filter(and_(Occurance.schedule_id == pill_item['id'],Occurance.pill_taken == False, Occurance.pill_missed == False)).all()
+                occurance_items = Occurance.query.filter(and_(Occurance.schedule_id == pill_item['id'],Occurance.pill_taken == False, Occurance.pill_missed == False)).all().order_by(Occurance.occurance_time)
             elif request.args['action'] == 'all':
-                occurance_items = Occurance.query.filter(and_(Occurance.schedule_id == pill_item['id'])).all()
+                occurance_items = Occurance.query.filter(and_(Occurance.schedule_id == pill_item['id'])).all().order_by(Occurance.occurance_time)
             occuranceJson = []
             for occurance in occurance_items:
                 occuranceJson.append(occurance.toJSON())

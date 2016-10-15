@@ -27,6 +27,7 @@ class SchedulesAPI(Resource):
         schedule = Schedule(data['name'],data['start'],data['end'])
         db.session.add(schedule)
         db.session.commit()
+        print(schedule.toJSON())
 
         times = ast.literal_eval(data['time'])
         dates = schedule.getActiveDates()
@@ -41,10 +42,13 @@ class SchedulesAPI(Resource):
         for dateTime in dateTimes:
             newOccurence = Occurance(dateTime,schedule.id)
             db.session.add(newOccurence)
+            db.session.commit()
             saveObjs.append(newOccurence.toJSON())
-        db.session.commit()
 
-        return saveObjs
+        return {
+            "item" : schedule.toJSON(),
+            "events" : saveObjs
+        }
 
 @schedules_api.resource('/schedules/<int:schedule_id>')
 class ScheduleAPI(Resource):

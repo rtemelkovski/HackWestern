@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from flask import Blueprint,request,jsonify
 from flask_restful import Api, Resource
+from sqlalchemy import and_
 from models import Schedule,Occurance
 import ast
 import datetime
@@ -19,12 +20,19 @@ class SchedulesAPI(Resource):
         returnResult = []
         schedules = Schedule.query
         schedules = [schedule.toJSON() for schedule in schedules]
+        current_time = datetime.datetime.utcnow()
         for pill_item in schedules:
-            occurance_items = Occurance.query.filter(Occurance.schedule_id == pill_item['id']).all()
+            occurance_items = []
+            if request.args['action'] == 'taken':
+                occurance_items = Occurance.query.filter(and_(Occurance.schedule_id == pill_item['id'],Occurance.pill_taken == True, Occurance.pill_missed == False)).all()
+            elif request.args['action'] == 'missed':
+                occurance_items = Occurance.query.filter(and_(Occurance.schedule_id == pill_item['id'],Occurance.pill_taken == False, Occurance.pill_missed == True)).all()
+            elif request.args['action'] == 'default':
+                occurance_items = Occurance.query.filter(and_(Occurance.schedule_id == pill_item['id'],Occurance.pill_taken == False, Occurance.pill_missed == False)).all()
             occuranceJson = []
             for occurance in occurance_items:
                 occuranceJson.append(occurance.toJSON())
-                
+
             returnResult.append({
                 "item" : pill_item,
                 "events" : occuranceJson

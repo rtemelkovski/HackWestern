@@ -8,20 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		46C9B3A01DB1CA9D00717C41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C9B39F1DB1CA9D00717C41 /* AppDelegate.swift */; };
-		46C9B3A21DB1CA9D00717C41 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C9B3A11DB1CA9D00717C41 /* ViewController.swift */; };
 		46C9B3A51DB1CA9D00717C41 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46C9B3A31DB1CA9D00717C41 /* Main.storyboard */; };
 		46C9B3A71DB1CA9D00717C41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46C9B3A61DB1CA9D00717C41 /* Assets.xcassets */; };
 		46C9B3AA1DB1CA9D00717C41 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46C9B3A81DB1CA9D00717C41 /* LaunchScreen.storyboard */; };
+		46C9B3B71DB1DC1500717C41 /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C9B3B61DB1DC1500717C41 /* MaterialView.swift */; };
+		46C9B3B91DB1DD9400717C41 /* HWNewScheduleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C9B3B81DB1DD9400717C41 /* HWNewScheduleVC.swift */; };
+		5DACF093D025E2A84DBEC14E /* Pods_HackWestern.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0FF101945DE292E5ED0AB76 /* Pods_HackWestern.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		021B924DDCDCA9472DE1B631 /* Pods-HackWestern.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackWestern.release.xcconfig"; path = "Pods/Target Support Files/Pods-HackWestern/Pods-HackWestern.release.xcconfig"; sourceTree = "<group>"; };
 		46C9B39C1DB1CA9D00717C41 /* HackWestern.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackWestern.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46C9B39F1DB1CA9D00717C41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		46C9B3A11DB1CA9D00717C41 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		46C9B3A41DB1CA9D00717C41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		46C9B3A61DB1CA9D00717C41 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		46C9B3A91DB1CA9D00717C41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		46C9B3AB1DB1CA9D00717C41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		46C9B3B61DB1DC1500717C41 /* MaterialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialView.swift; sourceTree = "<group>"; };
+		46C9B3B81DB1DD9400717C41 /* HWNewScheduleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWNewScheduleVC.swift; sourceTree = "<group>"; };
+		673BA7A4356D54A5452055A8 /* Pods-HackWestern.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackWestern.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HackWestern/Pods-HackWestern.debug.xcconfig"; sourceTree = "<group>"; };
+		C0FF101945DE292E5ED0AB76 /* Pods_HackWestern.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HackWestern.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +35,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DACF093D025E2A84DBEC14E /* Pods_HackWestern.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3B7AD2CEED29E49AE219C01F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C0FF101945DE292E5ED0AB76 /* Pods_HackWestern.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		46C9B3931DB1CA9D00717C41 = {
 			isa = PBXGroup;
 			children = (
 				46C9B39E1DB1CA9D00717C41 /* HackWestern */,
 				46C9B39D1DB1CA9D00717C41 /* Products */,
+				8274E6BCD99C51D704E648D7 /* Pods */,
+				3B7AD2CEED29E49AE219C01F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +71,64 @@
 		46C9B39E1DB1CA9D00717C41 /* HackWestern */ = {
 			isa = PBXGroup;
 			children = (
-				46C9B39F1DB1CA9D00717C41 /* AppDelegate.swift */,
-				46C9B3A11DB1CA9D00717C41 /* ViewController.swift */,
-				46C9B3A31DB1CA9D00717C41 /* Main.storyboard */,
-				46C9B3A61DB1CA9D00717C41 /* Assets.xcassets */,
-				46C9B3A81DB1CA9D00717C41 /* LaunchScreen.storyboard */,
-				46C9B3AB1DB1CA9D00717C41 /* Info.plist */,
+				46C9B3B51DB1CC6600717C41 /* Supporting Files */,
+				46C9B3B41DB1CC6200717C41 /* Services */,
+				46C9B3B31DB1CC5E00717C41 /* Controller */,
+				46C9B3B21DB1CC5A00717C41 /* View */,
+				46C9B3B11DB1CC5000717C41 /* Model */,
 			);
 			path = HackWestern;
+			sourceTree = "<group>";
+		};
+		46C9B3B11DB1CC5000717C41 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		46C9B3B21DB1CC5A00717C41 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				46C9B3A31DB1CA9D00717C41 /* Main.storyboard */,
+				46C9B3A81DB1CA9D00717C41 /* LaunchScreen.storyboard */,
+				46C9B3B61DB1DC1500717C41 /* MaterialView.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		46C9B3B31DB1CC5E00717C41 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				46C9B3B81DB1DD9400717C41 /* HWNewScheduleVC.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		46C9B3B41DB1CC6200717C41 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		46C9B3B51DB1CC6600717C41 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				46C9B39F1DB1CA9D00717C41 /* AppDelegate.swift */,
+				46C9B3A61DB1CA9D00717C41 /* Assets.xcassets */,
+				46C9B3AB1DB1CA9D00717C41 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8274E6BCD99C51D704E648D7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				673BA7A4356D54A5452055A8 /* Pods-HackWestern.debug.xcconfig */,
+				021B924DDCDCA9472DE1B631 /* Pods-HackWestern.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +138,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 46C9B3AE1DB1CA9D00717C41 /* Build configuration list for PBXNativeTarget "HackWestern" */;
 			buildPhases = (
+				018072C4D1C784302BB95A2A /* [CP] Check Pods Manifest.lock */,
 				46C9B3981DB1CA9D00717C41 /* Sources */,
 				46C9B3991DB1CA9D00717C41 /* Frameworks */,
 				46C9B39A1DB1CA9D00717C41 /* Resources */,
+				C9BE7DA448391DB2D73CF4A8 /* [CP] Embed Pods Frameworks */,
+				01761CBA1AAEAAFA2C4548D4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -97,6 +167,7 @@
 					46C9B39B1DB1CA9D00717C41 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = VUFGSJ9CH2;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -132,13 +203,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		01761CBA1AAEAAFA2C4548D4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HackWestern/Pods-HackWestern-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		018072C4D1C784302BB95A2A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C9BE7DA448391DB2D73CF4A8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HackWestern/Pods-HackWestern-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		46C9B3981DB1CA9D00717C41 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46C9B3A21DB1CA9D00717C41 /* ViewController.swift in Sources */,
+				46C9B3B71DB1DC1500717C41 /* MaterialView.swift in Sources */,
 				46C9B3A01DB1CA9D00717C41 /* AppDelegate.swift in Sources */,
+				46C9B3B91DB1DD9400717C41 /* HWNewScheduleVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,6 +377,7 @@
 		};
 		46C9B3AF1DB1CA9D00717C41 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 673BA7A4356D54A5452055A8 /* Pods-HackWestern.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = VUFGSJ9CH2;
@@ -270,6 +391,7 @@
 		};
 		46C9B3B01DB1CA9D00717C41 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 021B924DDCDCA9472DE1B631 /* Pods-HackWestern.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = VUFGSJ9CH2;
@@ -300,6 +422,7 @@
 				46C9B3B01DB1CA9D00717C41 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

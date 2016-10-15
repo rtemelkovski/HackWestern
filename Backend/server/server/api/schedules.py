@@ -16,8 +16,21 @@ def getDateTimeFromString(date,time):
 class SchedulesAPI(Resource):
     @staticmethod
     def get():
+        returnResult = []
         schedules = Schedule.query
-        return [schedule.toJSON() for schedule in schedules]
+        schedules = [schedule.toJSON() for schedule in schedules]
+        for pill_item in schedules:
+            occurance_items = Occurance.query.filter(Occurance.schedule_id == pill_item['id']).all()
+            occuranceJson = []
+            for occurance in occurance_items:
+                occuranceJson.append(occurance.toJSON())
+                
+            returnResult.append({
+                "item" : pill_item,
+                "events" : occuranceJson
+            })
+        return returnResult
+
 
     @staticmethod
     def post():

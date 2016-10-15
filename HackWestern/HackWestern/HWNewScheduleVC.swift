@@ -138,7 +138,9 @@ class HWNewScheduleVC: UIViewController, UITextViewDelegate {
     // MARK: - Process Text
     //-----------------
     private func processQuery(text : String){
-        
+        WebServices.shared.getResponseFromServer(query: text) { (response) in
+            print(response.description)
+        }
     }
     //-----------------
     // MARK: - IBActions

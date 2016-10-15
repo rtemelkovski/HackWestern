@@ -29,7 +29,8 @@ class HWNewScheduleVC: UIViewController, UITextViewDelegate {
     //-----------------
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        WebServices.shared.deleteMe()
+        
         hideKeyboardWhenTappedAround()
         transcriptionTextView.delegate = self
         SFSpeechRecognizer.requestAuthorization { authStatus in

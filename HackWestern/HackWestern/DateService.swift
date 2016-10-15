@@ -17,4 +17,9 @@ class DateService {
         return format.string(from: date)
     }
 
+    public func getDateFromStringWithDayPrecise(dateString : String) -> Date {
+        let format = DateFormatter()
+        format.setLocalizedDateFormatFromTemplate("yyyy-MM-dd")
+        return format.date(from: dateString)!
+    }
 }

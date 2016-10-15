@@ -35,5 +35,11 @@
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
+    <key>NSSpeechRecognitionUsageDescription</key>
+    <string>We need to use your speech</string>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>Can we use your microphone?</string>
 </dict>
 </plist>

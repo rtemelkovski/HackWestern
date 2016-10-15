@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		46C26D781DB21A61009EB8B0 /* HWOccurence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C26D771DB21A61009EB8B0 /* HWOccurence.swift */; };
 		46C9B3A01DB1CA9D00717C41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C9B39F1DB1CA9D00717C41 /* AppDelegate.swift */; };
 		46C9B3A51DB1CA9D00717C41 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46C9B3A31DB1CA9D00717C41 /* Main.storyboard */; };
 		46C9B3A71DB1CA9D00717C41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46C9B3A61DB1CA9D00717C41 /* Assets.xcassets */; };
@@ -15,12 +16,19 @@
 		46C9B3B91DB1DD9400717C41 /* HWNewScheduleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C9B3B81DB1DD9400717C41 /* HWNewScheduleVC.swift */; };
 		46C9B3BB1DB1E6FB00717C41 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C9B3BA1DB1E6FB00717C41 /* Extensions.swift */; };
 		46C9B3BD1DB1E9DD00717C41 /* WebServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C9B3BC1DB1E9DD00717C41 /* WebServices.swift */; };
+		46C9B3BF1DB1F68C00717C41 /* HWCalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C9B3BE1DB1F68C00717C41 /* HWCalendarVC.swift */; };
+		46C9B3C11DB1FD8D00717C41 /* HWCalendarEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C9B3C01DB1FD8D00717C41 /* HWCalendarEntry.swift */; };
+		46C9B3C31DB1FF0700717C41 /* DateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C9B3C21DB1FF0700717C41 /* DateService.swift */; };
+		46C9B3C51DB20BBB00717C41 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C9B3C41DB20BBB00717C41 /* Constants.swift */; };
+		46C9B3C71DB20D7100717C41 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C9B3C61DB20D7100717C41 /* Enums.swift */; };
+		46C9B3C91DB20E9600717C41 /* HWCalendarViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C9B3C81DB20E9600717C41 /* HWCalendarViewCell.swift */; };
 		5DACF093D025E2A84DBEC14E /* Pods_HackWestern.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0FF101945DE292E5ED0AB76 /* Pods_HackWestern.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		021B924DDCDCA9472DE1B631 /* Pods-HackWestern.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackWestern.release.xcconfig"; path = "Pods/Target Support Files/Pods-HackWestern/Pods-HackWestern.release.xcconfig"; sourceTree = "<group>"; };
-		46C9B39C1DB1CA9D00717C41 /* HackWestern.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackWestern.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		46C26D771DB21A61009EB8B0 /* HWOccurence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWOccurence.swift; sourceTree = "<group>"; };
+		46C9B39C1DB1CA9D00717C41 /* Pill-Hero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pill-Hero.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		46C9B39F1DB1CA9D00717C41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		46C9B3A41DB1CA9D00717C41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		46C9B3A61DB1CA9D00717C41 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -30,6 +38,12 @@
 		46C9B3B81DB1DD9400717C41 /* HWNewScheduleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWNewScheduleVC.swift; sourceTree = "<group>"; };
 		46C9B3BA1DB1E6FB00717C41 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		46C9B3BC1DB1E9DD00717C41 /* WebServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServices.swift; sourceTree = "<group>"; };
+		46C9B3BE1DB1F68C00717C41 /* HWCalendarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWCalendarVC.swift; sourceTree = "<group>"; };
+		46C9B3C01DB1FD8D00717C41 /* HWCalendarEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWCalendarEntry.swift; sourceTree = "<group>"; };
+		46C9B3C21DB1FF0700717C41 /* DateService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateService.swift; sourceTree = "<group>"; };
+		46C9B3C41DB20BBB00717C41 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		46C9B3C61DB20D7100717C41 /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		46C9B3C81DB20E9600717C41 /* HWCalendarViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWCalendarViewCell.swift; sourceTree = "<group>"; };
 		673BA7A4356D54A5452055A8 /* Pods-HackWestern.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackWestern.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HackWestern/Pods-HackWestern.debug.xcconfig"; sourceTree = "<group>"; };
 		C0FF101945DE292E5ED0AB76 /* Pods_HackWestern.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HackWestern.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -67,7 +81,7 @@
 		46C9B39D1DB1CA9D00717C41 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				46C9B39C1DB1CA9D00717C41 /* HackWestern.app */,
+				46C9B39C1DB1CA9D00717C41 /* Pill-Hero.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -87,6 +101,8 @@
 		46C9B3B11DB1CC5000717C41 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				46C9B3C01DB1FD8D00717C41 /* HWCalendarEntry.swift */,
+				46C26D771DB21A61009EB8B0 /* HWOccurence.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -97,6 +113,7 @@
 				46C9B3A31DB1CA9D00717C41 /* Main.storyboard */,
 				46C9B3A81DB1CA9D00717C41 /* LaunchScreen.storyboard */,
 				46C9B3B61DB1DC1500717C41 /* MaterialView.swift */,
+				46C9B3C81DB20E9600717C41 /* HWCalendarViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -105,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				46C9B3B81DB1DD9400717C41 /* HWNewScheduleVC.swift */,
+				46C9B3BE1DB1F68C00717C41 /* HWCalendarVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -113,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				46C9B3BC1DB1E9DD00717C41 /* WebServices.swift */,
+				46C9B3C21DB1FF0700717C41 /* DateService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -124,6 +143,8 @@
 				46C9B3A61DB1CA9D00717C41 /* Assets.xcassets */,
 				46C9B3AB1DB1CA9D00717C41 /* Info.plist */,
 				46C9B3BA1DB1E6FB00717C41 /* Extensions.swift */,
+				46C9B3C41DB20BBB00717C41 /* Constants.swift */,
+				46C9B3C61DB20D7100717C41 /* Enums.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -157,7 +178,7 @@
 			);
 			name = HackWestern;
 			productName = HackWestern;
-			productReference = 46C9B39C1DB1CA9D00717C41 /* HackWestern.app */;
+			productReference = 46C9B39C1DB1CA9D00717C41 /* Pill-Hero.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -262,11 +283,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46C9B3C11DB1FD8D00717C41 /* HWCalendarEntry.swift in Sources */,
+				46C9B3C91DB20E9600717C41 /* HWCalendarViewCell.swift in Sources */,
 				46C9B3B71DB1DC1500717C41 /* MaterialView.swift in Sources */,
+				46C9B3C71DB20D7100717C41 /* Enums.swift in Sources */,
 				46C9B3BD1DB1E9DD00717C41 /* WebServices.swift in Sources */,
+				46C9B3C31DB1FF0700717C41 /* DateService.swift in Sources */,
+				46C26D781DB21A61009EB8B0 /* HWOccurence.swift in Sources */,
 				46C9B3A01DB1CA9D00717C41 /* AppDelegate.swift in Sources */,
+				46C9B3BF1DB1F68C00717C41 /* HWCalendarVC.swift in Sources */,
 				46C9B3B91DB1DD9400717C41 /* HWNewScheduleVC.swift in Sources */,
 				46C9B3BB1DB1E6FB00717C41 /* Extensions.swift in Sources */,
+				46C9B3C51DB20BBB00717C41 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,7 +420,7 @@
 				INFOPLIST_FILE = HackWestern/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ca.itsalexnguyen.HackWestern;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Pill-Hero";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -406,7 +434,7 @@
 				INFOPLIST_FILE = HackWestern/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ca.itsalexnguyen.HackWestern;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Pill-Hero";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

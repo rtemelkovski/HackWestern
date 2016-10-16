@@ -12,18 +12,12 @@ import Alamofire
 class ServerSideParserService {
     static let shared = ServerSideParserService()
 
-    public func getCalendarEntrys(fromResponse response : DataResponse<Any>, completion : @escaping () -> Void){
+    public func getCalendarEntrys(fromResponse response : DataResponse<Any>, completion : @escaping (_ calendarEntry : [HWCalendarEntry]) -> Void){
         var returnCalendarEntry = [HWCalendarEntry]()
         print(response.description)
         var previousDate = Date.init(timeIntervalSince1970: 0)
         var id : Int!
-        var pillName = ""
         if let value = response.result.value as? [String : AnyObject] {
-            if let items = value["item"] as? AnyObject {
-                if let name = items["name-field"] as? String {
-                    print(name)
-                }
-            }
             if let events = value["events"] as? [AnyObject]{
                 for event in events{
                     let calendarEvent = HWCalendarEvent()
@@ -56,12 +50,14 @@ class ServerSideParserService {
                 }
             }
         }
-        WebServices.shared.getSchedule(withID: id) { (pillName) in
-            for entry in returnCalendarEntry {
-                entry.pillName = pillName
+        if ((id) != nil) {
+            WebServices.shared.getSchedule(withID: id) { (pillName) in
+                for entry in returnCalendarEntry {
+                    entry.pillName = pillName
+                }
+                StorageService.shared.calendarEntry = returnCalendarEntry
+                completion(returnCalendarEntry)
             }
-            StorageService.shared.calendarEntry = returnCalendarEntry
-            completion()
         }
     }
 }

@@ -12,5 +12,14 @@ class StorageService {
     static let shared = StorageService()
     
     var calendarEntry : [HWCalendarEntry]?
+    var calendarEntries : [[HWCalendarEntry]]?
+    var scheduleIndexs = [Int]() {
+        didSet {
+            calendarEntries = [[HWCalendarEntry]]()
+            for _ in 0..<scheduleIndexs.count {
+                calendarEntries?.append([HWCalendarEntry]())
+            }
+        }
+    }
     
 }

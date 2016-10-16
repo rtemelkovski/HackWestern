@@ -30,7 +30,7 @@ class WebServices {
             ]
         Alamofire.request(url!, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
             completion(response, nil)
-            //print(response.description)
+            print(response.description)
             if let value = response.result.value as? [String : AnyObject] {
                 if let result = value["result"] as? [String : AnyObject] {
                     if let fulfillment = result["fulfillment"] as? [String : AnyObject] {
@@ -86,7 +86,7 @@ class WebServices {
         
         Alamofire.request(url!, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
             print(response.description)
-            ServerSideParserService.shared.getCalendarEntrys(fromResponse: response, completion: { () -> Void in
+            ServerSideParserService.shared.getCalendarEntrys(fromResponse: response, completion: { (calendarEntries) -> Void in
             })
         }
     }
@@ -104,7 +104,7 @@ class WebServices {
         ]
         Alamofire.request(url!, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
             print(response.description)
-            ServerSideParserService.shared.getCalendarEntrys(fromResponse: response, completion: { () -> Void in
+            ServerSideParserService.shared.getCalendarEntrys(fromResponse: response, completion: { (calendarEntries) -> Void in
             })
         }
     }
@@ -126,9 +126,19 @@ class WebServices {
         let parameters: Parameters = ["action": "all"]
         
         Alamofire.request(url!, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: headers).responseJSON { (response) in
-            ServerSideParserService.shared.getCalendarEntrys(fromResponse: response, completion: { () -> Void in
+            ServerSideParserService.shared.getCalendarEntrys(fromResponse: response, completion: { (calendarEntries) -> Void in
+                StorageService.shared.calendarEntries?[id - 1] = calendarEntries
                 completion()
             })
+        }
+    }
+    public func getAllAvailiableIndex(completion : @escaping () -> Void){
+        let url = URL(string: "http://192.168.0.103:5000/api/schedule/all")
+        Alamofire.request(url!, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
+            if let values = response.result.value as? [Int]{
+                StorageService.shared.scheduleIndexs = values
+                completion()
+            }
         }
     }
 }

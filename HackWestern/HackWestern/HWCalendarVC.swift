@@ -9,18 +9,12 @@
 import UIKit
 
 class HWCalendarVC: UIViewController {
-
-    @IBOutlet weak var calendarTableView: UITableView!
     
-    var refreshControl : UIRefreshControl!
+    @IBOutlet weak var HWCollectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.refreshControl = UIRefreshControl()
-        self.refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh!")
-        self.refreshControl.addTarget(self, action: #selector(refresh), for: UIControlEvents.valueChanged)
-        calendarTableView.addSubview(refreshControl)
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,38 +23,37 @@ class HWCalendarVC: UIViewController {
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        calendarTableView.reloadData()
+        WebServices.shared.getAllAvailiableIndex {
+            self.HWCollectionView.reloadData()
+        }
     }
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
-    func refresh (sender: AnyObject){
-        WebServices.shared.refreshTableView(withScheduleId: 1) { 
-            self.calendarTableView.reloadData()
-            self.stopRefresher()
-        }
-    }
-    func stopRefresher()
-    {
-        refreshControl.endRefreshing()
-    }
 }
 
-extension HWCalendarVC: UITableViewDelegate, UITableViewDataSource {
-    @available(iOS 2.0, *)
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+extension HWCalendarVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
-
-    public func numberOfSections(in tableView: UITableView) -> Int {
-        return StorageService.shared.calendarEntry?.count ?? 0
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return StorageService.shared.scheduleIndexs.count
     }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let calendaryEntry = StorageService.shared.calendarEntry?[indexPath.row]
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "HWCalendarVC", for: indexPath) as? HWCalendarViewCell {
-            cell.setupCell(withCalendarEntry: calendaryEntry!)
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let id = StorageService.shared.scheduleIndexs[indexPath.row]
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HWCollectionViewCell", for: indexPath) as? HWCollectionViewCell {
+            cell.id = id
+            cell.setupCell()
+            return cell
         }
-        return UITableViewCell()
+        return UICollectionViewCell()
+    }
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width : collectionView.bounds.size.width, height : collectionView.bounds.size.height)
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
     }
 }

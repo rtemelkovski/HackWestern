@@ -29,7 +29,10 @@ class HWNewScheduleVC: UIViewController, UITextViewDelegate {
     //-----------------
     override func viewDidLoad() {
         super.viewDidLoad()
-        WebServices.shared.deleteMe()
+        WebServices.shared.getAllAvailiableIndex {
+            
+        }
+        //WebServices.shared.deleteMe()
         //WebServices.shared.refreshTableView(withScheduleId: 1)
         //WebServices.shared.getSchedule(withID: 1)
         hideKeyboardWhenTappedAround()

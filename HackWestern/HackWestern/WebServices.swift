@@ -42,7 +42,8 @@ class WebServices {
                     if let params = result["parameters"] as? [String : AnyObject] {
                         if let sdate = params["date"] as? String {
                             startDate = sdate
-                            if DateService.shared.getDateFromStringWithDayPrecise(dateString: startDate!).timeIntervalSinceNow.isLess(than: 0){
+                            print(DateService.shared.getDateFromStringWithDayPrecise(dateString: startDate!).timeIntervalSinceNow)
+                            if DateService.shared.getDateFromStringWithDayPrecise(dateString: startDate!).timeIntervalSinceNow.isLess(than: -32000){
                                 completion(nil, "The start date is before today's date!")
                                 return
                             }

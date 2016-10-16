@@ -72,10 +72,11 @@
                                                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
-                                                                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="bmB-AO-wUu">
-                                                                                <frame key="frameInset" minX="50" minY="106" width="260" height="30"/>
+                                                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="bmB-AO-wUu">
+                                                                                <frame key="frameInset" minX="50" minY="106" height="30"/>
                                                                                 <subviews>
-                                                                                    <button hidden="YES" opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vn7-42-wgv">
+                                                                                    <button hidden="YES" opaque="NO" tag="3" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vn7-42-wgv">
+                                                                                        <frame key="frameInset" minX="-188" minY="-114" height="30"/>
                                                                                         <color key="backgroundColor" red="0.31372549019607843" green="0.22745098039215686" blue="0.46666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="height" constant="30" id="WMR-GM-lJY"/>
@@ -85,7 +86,8 @@
                                                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                                         </state>
                                                                                     </button>
-                                                                                    <button hidden="YES" opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bGd-tS-c3o">
+                                                                                    <button hidden="YES" opaque="NO" tag="4" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bGd-tS-c3o">
+                                                                                        <frame key="frameInset" minX="-188" minY="-114" height="30"/>
                                                                                         <color key="backgroundColor" red="0.80000000000000004" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="width" constant="48" id="6qx-ed-GQ1"/>
@@ -95,7 +97,8 @@
                                                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                                         </state>
                                                                                     </button>
-                                                                                    <button hidden="YES" opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WQ0-7o-7gG">
+                                                                                    <button hidden="YES" opaque="NO" tag="5" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WQ0-7o-7gG">
+                                                                                        <frame key="frameInset" minX="-188" minY="-114" height="30"/>
                                                                                         <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="width" constant="48" id="1Qb-8H-Ncd"/>
@@ -105,7 +108,8 @@
                                                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                                         </state>
                                                                                     </button>
-                                                                                    <button hidden="YES" opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E50-4K-DBu">
+                                                                                    <button hidden="YES" opaque="NO" tag="6" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E50-4K-DBu">
+                                                                                        <frame key="frameInset" minX="-188" minY="-114" height="30"/>
                                                                                         <color key="backgroundColor" red="0.62745098039215685" green="0.62745098039215685" blue="0.62745098039215685" alpha="1" colorSpace="calibratedRGB"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="height" constant="30" id="axn-7k-FsE"/>
@@ -115,7 +119,8 @@
                                                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                                         </state>
                                                                                     </button>
-                                                                                    <button hidden="YES" opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lnl-vP-mUH">
+                                                                                    <button hidden="YES" opaque="NO" tag="7" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lnl-vP-mUH">
+                                                                                        <frame key="frameInset" minX="-188" minY="-114" height="30"/>
                                                                                         <color key="backgroundColor" red="0.68627450980392157" green="0.68627450980392157" blue="0.68627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="width" constant="48" id="8Wf-v9-6vc"/>
@@ -259,7 +264,7 @@
                                     <action selector="microphoneBtnPressed:" destination="2s0-aB-hqg" eventType="touchUpInside" id="eh3-nh-eXa"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="I need to take advil at 8am, 12pm and 2pm starting October 16th, 2016 ending on October 28th, 2016" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Yk8-Z7-rzy">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="I need to take advil at 8am, 12pm and 2pm starting October 18th, 2016 ending on October 28th, 2016" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Yk8-Z7-rzy">
                                 <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="30"/>
@@ -297,6 +302,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Input" image="tabBarNSIcon" id="oVs-oJ-FTD"/>
                     <connections>
+                        <outlet property="createBtn" destination="khh-Y9-B70" id="LeW-XT-4VQ"/>
                         <outlet property="microphoneBtn" destination="PFR-pn-RUY" id="qrG-sh-RaF"/>
                         <outlet property="transcriptionTextView" destination="Yk8-Z7-rzy" id="saG-pb-pAu"/>
                     </connections>

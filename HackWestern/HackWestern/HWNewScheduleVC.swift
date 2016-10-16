@@ -16,6 +16,7 @@ class HWNewScheduleVC: UIViewController, UITextViewDelegate {
     //-----------------
     @IBOutlet weak var transcriptionTextView: UITextView!
     @IBOutlet weak var microphoneBtn: UIButton!
+    @IBOutlet weak var createBtn: UIButton!
     
     //-----------------
     // MARK: - Variables
@@ -173,6 +174,10 @@ class HWNewScheduleVC: UIViewController, UITextViewDelegate {
                 DispatchQueue.main.async {
                     self.transcriptionTextView.text = error
                 }
+            } else {
+                DispatchQueue.main.async {
+                    self.transcriptionTextView.text = "Great! We added that schedule to your calendar!"
+                }
             }
             LoadingScreenService.shared.dismissLoadingView()
         }
@@ -184,9 +189,12 @@ class HWNewScheduleVC: UIViewController, UITextViewDelegate {
         if audioEngine.isRunning {
             audioEngine.stop()
             recognitionRequest?.endAudio()
-            processQuery(text: transcriptionTextView.text)
+            createBtn.setTitle("Create", for: .normal)
+            createBtn.isEnabled = true
         } else {
             try! startRecording()
+            createBtn.setTitle("Recording", for: .normal)
+            createBtn.isEnabled = false
         }
     }
     @IBAction func createBtnPressed(_ sender: AnyObject) {

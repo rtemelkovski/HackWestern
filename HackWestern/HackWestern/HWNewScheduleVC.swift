@@ -29,7 +29,9 @@ class HWNewScheduleVC: UIViewController, UITextViewDelegate {
     //-----------------
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        WebServices.shared.deleteMe()
+        //WebServices.shared.refreshTableView(withScheduleId: 1)
+        //WebServices.shared.getSchedule(withID: 1)
         hideKeyboardWhenTappedAround()
         transcriptionTextView.delegate = self
         SFSpeechRecognizer.requestAuthorization { authStatus in
@@ -138,12 +140,14 @@ class HWNewScheduleVC: UIViewController, UITextViewDelegate {
     // MARK: - Process Text
     //-----------------
     private func processQuery(text : String){
+        LoadingScreenService.shared.presentLoadingView()
         WebServices.shared.getResponseFromServer(query: text) { (response, error) in
             if error != nil {
                 DispatchQueue.main.async {
                     self.transcriptionTextView.text = error
                 }
             }
+            LoadingScreenService.shared.dismissLoadingView()
         }
     }
     //-----------------

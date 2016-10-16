@@ -7,4 +7,5 @@ target 'HackWestern' do
 
   # Pods for HackWestern
 pod 'Alamofire', '~> 4.0'
+pod 'pop'
 end

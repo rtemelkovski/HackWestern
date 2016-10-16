@@ -10,6 +10,8 @@ import UIKit
 
 class HWCalendarVC: UIViewController {
 
+    @IBOutlet weak var calendarTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,7 +22,10 @@ class HWCalendarVC: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        calendarTableView.reloadData()
+    }
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -33,17 +38,13 @@ extension HWCalendarVC: UITableViewDelegate, UITableViewDataSource {
     }
 
     public func numberOfSections(in tableView: UITableView) -> Int {
-        return 10
+        return StorageService.shared.calendarEntry?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let calendaryEntry = StorageService.shared.calendarEntry?[indexPath.row]
         if let cell = tableView.dequeueReusableCell(withIdentifier: "HWCalendarVC", for: indexPath) as? HWCalendarViewCell {
-            let calendaryEntry = HWCalendarEntry(withDate: Date(), withPillName: "MDMA")
-            calendaryEntry.addNewTime(time: HWOccurence(withTimeLabel: "4am", andStatus: PillStatus.CONSUMED))
-            calendaryEntry.addNewTime(time: HWOccurence(withTimeLabel: "8am", andStatus: PillStatus.CONSUMED))
-            calendaryEntry.addNewTime(time: HWOccurence(withTimeLabel: "10am", andStatus: PillStatus.APPROACHING))
-            calendaryEntry.addNewTime(time: HWOccurence(withTimeLabel: "1pm", andStatus: PillStatus.PENDING))
-            cell.setupCell(withCalendarEntry: calendaryEntry)
+            cell.setupCell(withCalendarEntry: calendaryEntry!)
         }
         return UITableViewCell()
     }

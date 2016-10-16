@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "HackWestern/WebServices.swift"
-            timestampString = "498266131.328097"
+            filePath = "HackWestern/1921680103JSONParserService.swift"
+            timestampString = "498279255.151097"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
-            landmarkName = "sendResponseToServer(withParams:)"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "getCalendarEntrys(fromResponse:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

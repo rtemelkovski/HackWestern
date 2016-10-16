@@ -96,10 +96,10 @@ class WebServices {
             "Content-Type": "application/json"
         ]
         let parameters : Parameters = [
-            "start" : "2016-11-06",
-            "end" : "2016-11-08",
+            "start" : "2016-10-15",
+            "end" : "2016-10-16",
             "name" : "Meth",
-            "time" : ["08:00:00", "10:00:00"]
+            "time" : ["08:00:00", "20:00:00"]
         ]
         Alamofire.request(url!, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
             print(response.description)

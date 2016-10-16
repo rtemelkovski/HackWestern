@@ -9,7 +9,9 @@
 import Foundation
 
 class HWCalendarEvent {
-    var occurance : Date!
+    var day : Date!
+    var time : String!
+    
     private var pill_missed : Int!
     private var pill_taken : Int!
     
@@ -26,8 +28,11 @@ class HWCalendarEvent {
             }
         }
     }
-    func setOccurance(withOccurance occurance: Date) {
-        self.occurance = occurance
+    func setDay(withDay day: Date) {
+        self.day = day
+    }
+    func setTime(withTime time : String){
+        self.time = time
     }
     func setPillMissed(withPilledMissed pillMissed: Int) {
         self.pill_missed = pillMissed

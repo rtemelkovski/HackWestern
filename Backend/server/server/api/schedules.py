@@ -86,11 +86,10 @@ class ScheduleAPI(Resource):
             for occurance in occurance_items:
                 occuranceJson.append(occurance.toJSON())
 
-            returnResult.append({
+            return {
                 "item" : pill_item,
                 "events" : occuranceJson
-            })
-        return returnResult
+            }
 
 
     @staticmethod

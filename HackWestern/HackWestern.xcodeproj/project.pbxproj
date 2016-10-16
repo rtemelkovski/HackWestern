@@ -29,6 +29,7 @@
 		46EB64431DB3134700E64418 /* HWLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EB64421DB3134700E64418 /* HWLoadingView.swift */; };
 		46EB64451DB3143A00E64418 /* LoadingScreenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EB64441DB3143A00E64418 /* LoadingScreenService.swift */; };
 		46EB64471DB345D500E64418 /* HWCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EB64461DB345D500E64418 /* HWCollectionViewCell.swift */; };
+		46EB64491DB3974900E64418 /* TimerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EB64481DB3974900E64418 /* TimerService.swift */; };
 		5DACF093D025E2A84DBEC14E /* Pods_HackWestern.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0FF101945DE292E5ED0AB76 /* Pods_HackWestern.framework */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +59,7 @@
 		46EB64421DB3134700E64418 /* HWLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWLoadingView.swift; sourceTree = "<group>"; };
 		46EB64441DB3143A00E64418 /* LoadingScreenService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingScreenService.swift; sourceTree = "<group>"; };
 		46EB64461DB345D500E64418 /* HWCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWCollectionViewCell.swift; sourceTree = "<group>"; };
+		46EB64481DB3974900E64418 /* TimerService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerService.swift; sourceTree = "<group>"; };
 		673BA7A4356D54A5452055A8 /* Pods-HackWestern.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackWestern.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HackWestern/Pods-HackWestern.debug.xcconfig"; sourceTree = "<group>"; };
 		C0FF101945DE292E5ED0AB76 /* Pods_HackWestern.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HackWestern.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -152,6 +154,7 @@
 				46EB64391DB2D85000E64418 /* 1921680103JSONParserService.swift */,
 				46EB643D1DB30BC700E64418 /* StorageService.swift */,
 				46EB64441DB3143A00E64418 /* LoadingScreenService.swift */,
+				46EB64481DB3974900E64418 /* TimerService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 				46C9B3BB1DB1E6FB00717C41 /* Extensions.swift in Sources */,
 				46EB64411DB312BE00E64418 /* HWCircularView.swift in Sources */,
 				46C9B3C51DB20BBB00717C41 /* Constants.swift in Sources */,
+				46EB64491DB3974900E64418 /* TimerService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,6 +8,7 @@
 
 import UIKit
 import Speech
+import UserNotifications
 
 class HWNewScheduleVC: UIViewController, UITextViewDelegate {
     //-----------------
@@ -37,6 +38,8 @@ class HWNewScheduleVC: UIViewController, UITextViewDelegate {
         //WebServices.shared.getSchedule(withID: 1)
         hideKeyboardWhenTappedAround()
         transcriptionTextView.delegate = self
+        UIApplication.shared.applicationIconBadgeNumber = -1
+        
         SFSpeechRecognizer.requestAuthorization { authStatus in
             /*
              The callback may not be called on the main thread. Add an
@@ -60,6 +63,12 @@ class HWNewScheduleVC: UIViewController, UITextViewDelegate {
                 }
             }
         }
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.alert, .badge]) { (granted, error) in
+            if (error == nil) {
+                self.startNotifications()
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -71,6 +80,21 @@ class HWNewScheduleVC: UIViewController, UITextViewDelegate {
         return .lightContent
     }
 
+    private func startNotifications(){
+        let content = UNMutableNotificationContent()
+        content.title = "New Pill!"
+        content.body = "You have to take a new Advil pill in 20 minutes!"
+        content.sound = UNNotificationSound.default()
+        content.badge = Int(UIApplication.shared.applicationIconBadgeNumber + 1) as NSNumber?
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)
+        let request = UNNotificationRequest(identifier: "20", content: content, trigger: trigger)
+        let center = UNUserNotificationCenter.current()
+        center.add(request) { (error) in
+            if error == nil {
+                print("Add notification  succeeded")
+            }
+        }
+    }
     private func startRecording() throws {
         
         // Cancel the previous task if it's running.

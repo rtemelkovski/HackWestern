@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import datetime
-from flask import json
+from flask import jsonify
 from app import db
 
 def getDateFromString(date):
@@ -31,7 +31,7 @@ class Schedule(db.Model):
 
 	def toJSON(self):
 		return {
-			"name": self.name,
+			"name-field": self.name + '-',
 			"start_date": self.start_date.isoformat(),
 			"end_date": self.end_date.isoformat(),
 			'id': self.id

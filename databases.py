@@ -28,12 +28,12 @@ thirtyMinsFuture = (currTime + timedelta(minutes=30))
 fiveMinsPast = (currTime - timedelta(minutes=5))
 
 if currTime < timeInst and timeInst < thirtyMinsFuture:
-	print('here')
 	requests.put(url = postNotificationLink+ '/' + str(firstItem['id']) +'?action=post')
-
+if timeInst > thirtyMinsFuture:
+	requests.put(url = postNotificationLink+ '/' + str(firstItem['id']) +'?action=missed')
 if timeInst < currTime and timeInst > fiveMinsPast:
-	print('here')
 	requests.put(url = preNotificationLink+'/' + str(firstItem['id']) +'?action=pre')
+
 
 # for entry in jsonReply:
     # for event in entry['events']:

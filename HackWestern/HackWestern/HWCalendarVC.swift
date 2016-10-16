@@ -12,10 +12,15 @@ class HWCalendarVC: UIViewController {
 
     @IBOutlet weak var calendarTableView: UITableView!
     
+    var refreshControl : UIRefreshControl!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh!")
+        self.refreshControl.addTarget(self, action: #selector(refresh), for: UIControlEvents.valueChanged)
+        calendarTableView.addSubview(refreshControl)
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,6 +33,16 @@ class HWCalendarVC: UIViewController {
     }
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
+    }
+    func refresh (sender: AnyObject){
+        WebServices.shared.refreshTableView(withScheduleId: 1) { 
+            self.calendarTableView.reloadData()
+            self.stopRefresher()
+        }
+    }
+    func stopRefresher()
+    {
+        refreshControl.endRefreshing()
     }
 }
 

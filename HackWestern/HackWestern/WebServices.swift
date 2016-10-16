@@ -86,7 +86,8 @@ class WebServices {
         
         Alamofire.request(url!, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
             print(response.description)
-            ServerSideParserService.shared.getCalendarEntrys(fromResponse: response)
+            ServerSideParserService.shared.getCalendarEntrys(fromResponse: response, completion: { () -> Void in
+            })
         }
     }
     public func deleteMe(){
@@ -103,10 +104,21 @@ class WebServices {
         ]
         Alamofire.request(url!, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
             print(response.description)
-            ServerSideParserService.shared.getCalendarEntrys(fromResponse: response)
+            ServerSideParserService.shared.getCalendarEntrys(fromResponse: response, completion: { () -> Void in
+            })
         }
     }
-    public func refreshTableView(withScheduleId id : Int){
+    public func getSchedule(withID id : Int, completion : @escaping (_ pillName : String) -> Void) {
+        let url = URL(string: "http://192.168.0.103:5000/api/schedule/\(id)")
+        Alamofire.request(url!, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
+            if let value = response.result.value as? [String : AnyObject] {
+                if let name = value["name-field"] as? String {
+                    completion(name.replacingOccurrences(of: "-", with: ""))
+                }
+            }
+        }
+    }
+    public func refreshTableView(withScheduleId id : Int, completion : @escaping () -> Void){
         let url = URL(string: "http://192.168.0.103:5000/api/schedules/\(id)")
         let headers = [
             "Content-Type": "application/x-www-form-urlencoded"
@@ -114,7 +126,9 @@ class WebServices {
         let parameters: Parameters = ["action": "all"]
         
         Alamofire.request(url!, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: headers).responseJSON { (response) in
-            print(response.description)
+            ServerSideParserService.shared.getCalendarEntrys(fromResponse: response, completion: { () -> Void in
+                completion()
+            })
         }
     }
 }

@@ -43,7 +43,7 @@ class WebServices {
                         if let sdate = params["date"] as? String {
                             startDate = sdate
                             print(DateService.shared.getDateFromStringWithDayPrecise(dateString: startDate!).timeIntervalSinceNow)
-                            if DateService.shared.getDateFromStringWithDayPrecise(dateString: startDate!).timeIntervalSinceNow.isLess(than: -32000){
+                            if DateService.shared.getDateFromStringWithDayPrecise(dateString: startDate!).timeIntervalSinceNow.isLess(than: -40000){
                                 completion(nil, "The start date is before today's date!")
                                 return
                             }
@@ -79,7 +79,7 @@ class WebServices {
     }
     
     public func sendResponseToServer(withParams parameters : Parameters){
-        let url = URL(string :"http://192.168.0.103:5000/api/schedules")
+        let url = URL(string :"http://192.168.0.102:5000/api/schedules")
         
         let headers = [
             "Content-Type": "application/json"
@@ -92,16 +92,16 @@ class WebServices {
         }
     }
     public func deleteMe(){
-        let url = URL(string :"http://192.168.0.103:5000/api/schedules")
+        let url = URL(string :"http://192.168.0.102:5000/api/schedules")
         
         let headers = [
             "Content-Type": "application/json"
         ]
         let parameters : Parameters = [
-            "start" : "2016-10-15",
-            "end" : "2016-10-16",
-            "name" : "Meth",
-            "time" : ["08:00:00", "20:00:00"]
+            "start" : "2016-10-16",
+            "end" : "2016-10-17",
+            "name" : "Tylenol",
+            "time" : ["12:05:00", "12:10:00","12:15:00","12:20:00","12:25:00"]
         ]
         Alamofire.request(url!, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
             print(response.description)
@@ -110,7 +110,7 @@ class WebServices {
         }
     }
     public func getSchedule(withID id : Int, completion : @escaping (_ pillName : String) -> Void) {
-        let url = URL(string: "http://192.168.0.103:5000/api/schedule/\(id)")
+        let url = URL(string: "http://192.168.0.102:5000/api/schedule/\(id)")
         Alamofire.request(url!, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
             if let value = response.result.value as? [String : AnyObject] {
                 if let name = value["name-field"] as? String {
@@ -120,7 +120,7 @@ class WebServices {
         }
     }
     public func refreshTableView(withScheduleId id : Int, completion : @escaping () -> Void){
-        let url = URL(string: "http://192.168.0.103:5000/api/schedules/\(id)")
+        let url = URL(string: "http://192.168.0.102:5000/api/schedules/\(id)")
         let headers = [
             "Content-Type": "application/x-www-form-urlencoded"
         ]
@@ -134,7 +134,7 @@ class WebServices {
         }
     }
     public func getAllAvailiableIndex(completion : @escaping () -> Void){
-        let url = URL(string: "http://192.168.0.103:5000/api/schedule/all")
+        let url = URL(string: "http://192.168.0.102:5000/api/schedule/all")
         Alamofire.request(url!, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
             if let values = response.result.value as? [Int]{
                 StorageService.shared.scheduleIndexs = values
